@@ -6,6 +6,8 @@ import Electronic_product from './Component/ElectronicshowProduct/Electronic_pro
 import AddToCart from './Component/AddToCart/AddToCart'
 import Skin_Care from './Component/SkinCare/SkinCare'
 import Home_kitchen from './Component/Home&Kitchen/Home_kitchen'
+import LogIn from './Component/LogIn/LogIn'
+import SignUp from './Component/SignUp/SignUp'
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path='/skin_care' element={<Skin_Care />} />
         <Route path='/home_kitchen' element={<Home_kitchen />} />
         <Route path='/cart' element={<AddToCart />} />
+        <Route path='/login' element={<LogIn />} />
+        <Route path='/signup' element={<SignUp />} />
       </Routes>
     </div>
   )

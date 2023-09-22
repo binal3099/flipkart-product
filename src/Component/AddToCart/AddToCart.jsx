@@ -7,7 +7,7 @@ import Total from '../Total/Total';
 
 function AddToCart() {
 
-    const Add_to = useSelector(state => state.cart);
+    const Add_to = useSelector(state => state.Cart_Addreducer.cart);
 
     const [total, setTotal] = useState(0);
 

@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import storage from 'redux-persist/lib/storage';
 import {persistStore} from 'redux-persist';
 import {persistReducer} from 'redux-persist';
-import { Cart_Addreducer } from './Services/Reducer/Cart_AddReducer';
+import { mainReducer } from './Services/Reducer/MainReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -18,7 +18,7 @@ const persistConfig = {
 // const persister = persistReducer(persistConfig)
 
 const store = createStore (
-    Cart_Addreducer
+    mainReducer
     ,composeEnhancers(applyMiddleware(thunk))
     // ,composeEnhancers(applyMiddleware(sagamiddle))
 )
