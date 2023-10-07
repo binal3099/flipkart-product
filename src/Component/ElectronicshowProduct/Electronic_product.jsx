@@ -7,52 +7,39 @@ import { useDispatch } from 'react-redux'
 import { Cart_Add } from '../../Services/Action/Cart_Add'
 
 
-
 const ele_product =
-    axios.get(base_url + "/products").then((res) => {
-        // console.log("res",res.data);
-        let e_data = res.data;
 
-        // console.log(e_data,"e_data");
+axios.get(base_url + "/products").then((res) => {
+     console.log("res",res.data);
+    let e_data = res.data;
 
-        let ele_pro = e_data.filter((el) => {
-            // console.log((el,"el")
+    console.log(e_data,"e_data");
 
-            // let data = [];
-            if (el.category == 'electornics') {
-                return el;
-            }
-            //  return d.category == 'electornics';
-        })
-        // console.log("return", ele_pro);
-        return ele_pro;
+    let ele_pro = e_data.filter((el) => {
+        // console.log((el,"el")
 
-
-    }).catch((err) => {
-        console.log("err", err);
+        // let data = [];
+        if (el.category == 'electornics') {
+            return el;
+        }
+        //  return d.category == 'electornics';
     })
-// }
+    // console.log("return", ele_pro);
+    return ele_pro;
 
-// ele_product.then((res) => {
-//     console.log("Res", res);
-//     // return res;
-// }).catch((err) => {
-//     console.log("Err", err);
-// })
 
-// const printAddress = async () => {
-//     const a = await ele_product;
-//     console.log(a);
-//     return a;
-// };
+}).catch((err) => {
+    console.log("err", err);
+ })
+
 
 
 function Electronic_product() {
 
-   const navigate = useNavigate();
-   const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const handleClick = (e) =>{
+    const handleClick = (e) => {
 
         dispatch(Cart_Add(e))
         navigate('/cart');

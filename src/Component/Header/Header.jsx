@@ -5,8 +5,14 @@ import { BsSearch } from 'react-icons/bs'
 import { FaShoppingCart } from 'react-icons/fa'
 import { Navigate, useNavigate } from 'react-router'
 import { base_url } from '../../Api/Api'
+import { useDispatch, useSelector } from 'react-redux'
+import { Logout_async } from '../../Services/Action/Authntication'
 
 function Header() {
+
+    const dispatch = useDispatch();
+
+    const { login } = useSelector(state => state.Aunthntication_reducer);
 
     const navigate = useNavigate()
     const [search, setsearch] = useState([])
@@ -24,11 +30,10 @@ function Header() {
 
         let search_show = document.getElementById("sea_show")
 
-        if(value){
+        if (value) {
             search_show.classList.add("show");
         }
-        else
-        {
+        else {
             search_show.classList.remove("show");
 
         }
@@ -52,8 +57,12 @@ function Header() {
         // setuserView(set_data);
     }
 
-    const handleClick = ()=>{
+    const handleClick = () => {
         navigate('/login')
+    }
+
+    const handleClick_logout = () => {
+        dispatch(Logout_async());
     }
 
     return (
@@ -87,7 +96,12 @@ function Header() {
 
 
                     </Navbar.Collapse>
-                    <Button variant="light" style={{ margin: "0 20px" }} onClick={handleClick}>Login</Button>
+                    {
+                        login ?
+                            <Button variant="light" style={{ margin: "0 20px" }} onClick={handleClick_logout}>Logout</Button>
+                            :
+                            <Button variant="light" style={{ margin: "0 20px" }} onClick={handleClick}>Login</Button>
+                    }
                     <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
                         <Nav.Link href="#">Become a Seller</Nav.Link>
                         <NavDropdown title="More" id="navbarScrollingDropdown">
@@ -114,4 +128,4 @@ function Header() {
     )
 }
 
-export default Header
+export default Header;

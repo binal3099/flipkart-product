@@ -31,21 +31,6 @@ const Homekitchen =
     }).catch((err) => {
         console.log("err", err);
     })
-// }
-
-// ele_product.then((res) => {
-//     console.log("Res", res);
-//     // return res;
-// }).catch((err) => {
-//     console.log("Err", err);
-// })
-
-// const printAddress = async () => {
-//     const a = await ele_product;
-//     console.log(a);
-//     return a;
-// };
-
 
 function Home_kitchen() {
 
@@ -88,7 +73,7 @@ function Home_kitchen() {
                                     // console.log("e",e) &&
                                     <>
 
-                                        <Card style={{ width: '18rem', margin: "20px" }}>
+                                        <Card style={{ width: '288px', margin: "20px" }}>
                                             <Card.Img variant="top" src={e.thumbnail} />
                                             <Card.Body>
                                                 <Card.Title>{e.title}</Card.Title>

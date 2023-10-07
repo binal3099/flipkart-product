@@ -31,21 +31,6 @@ const SkinCare =
     }).catch((err) => {
         console.log("err", err);
     })
-// }
-
-// ele_product.then((res) => {
-//     console.log("Res", res);
-//     // return res;
-// }).catch((err) => {
-//     console.log("Err", err);
-// })
-
-// const printAddress = async () => {
-//     const a = await ele_product;
-//     console.log(a);
-//     return a;
-// };
-
 
 function Skin_Care() {
 

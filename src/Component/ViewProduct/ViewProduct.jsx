@@ -47,7 +47,7 @@ function ViewProduct() {
         <>
             <Container>
                 <Row>
-                    <div className='d-flex mt-5'>
+                    <div className='d-flex mt-5 card-show' >
                         <Card className='card-1'>
                             <Card.Body>
                                 <Card.Title>Best Of Electronics</Card.Title>
@@ -79,26 +79,26 @@ function ViewProduct() {
                         </Card>
                     </div>
 
-                    <div className='d-flex mt-5'>
+                    <div className='d-flex mt-5 card-show'>
                         <Card className='card-2'>
                             <Card.Body>
                                 <Card.Title style={{marginTop: "60px"}}>Skin care & Hair</Card.Title>
                                 <Button variant="primary" onClick={()=>navigate('/skin_care')}>VIEW ALL</Button>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem' }}>
+                        <Card style={{ width: '18rem' }} className='card-show'>
                             <Card.Img variant="top" src="https://i.dummyjson.com/data/products/11/1.jpg" />
                             <Card.Body>
                                 <Card.Title>Perfume</Card.Title>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem' }}>
+                        <Card style={{ width: '18rem' }} className='card-show'>
                             <Card.Img variant="top" src="https://i.dummyjson.com/data/products/16/3.jpg" />
                             <Card.Body>
                                 <Card.Title>L'oreal serum</Card.Title>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem' }}>
+                        <Card style={{ width: '18rem' }} className='card-show'>
                             <Card.Img variant="top" src="https://i.dummyjson.com/data/products/19/3.png" />
                             <Card.Body>
                                 <Card.Title>White Rice</Card.Title>
@@ -106,29 +106,29 @@ function ViewProduct() {
                         </Card>
                     </div>
 
-                    <div className='d-flex mt-5'>
+                    <div className='d-flex mt-5 card-show'>
                         <Card className='card-3'>
                             <Card.Body>
                                 <Card.Title style={{marginTop: "60px"}}>Home & Kitchen</Card.Title>
                                 <Button variant="primary" onClick={()=>navigate('/home_kitchen')}>VIEW ALL</Button>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem' }}>
+                        <Card style={{ width: '18rem' }} className='card-show'>
                             <Card.Img variant="top" src="https://i.dummyjson.com/data/products/26/3.jpg" />
                             <Card.Body>
-                                <Card.Title>iPhone X</Card.Title>
+                                {/* <Card.Title>iPhone X</Card.Title> */}
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem' }}>
+                        <Card style={{ width: '18rem' }} className='card-show'>
                             <Card.Img variant="top" src="https://i.dummyjson.com/data/products/24/2.jpg" />
                             <Card.Body>
-                                <Card.Title>iPhone X</Card.Title>
+                                {/* <Card.Title>iPhone X</Card.Title> */}
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem' }}>
+                        <Card style={{ width: '18rem' }} className='card-show'>
                             <Card.Img variant="top" src="https://i.dummyjson.com/data/products/29/2.jpg" />
                             <Card.Body>
-                                <Card.Title>iPhone X</Card.Title>
+                                {/* <Card.Title>iPhone X</Card.Title> */}
                             </Card.Body>
                         </Card>
                     </div>

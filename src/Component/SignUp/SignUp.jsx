@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Button, Container, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { Loginasync, Signupasync } from '../../Services/Action/Authntication'
+import { Loginasync, Signupasync, google_signup } from '../../Services/Action/Authntication'
 import { useNavigate } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 function SignUp() {
 
@@ -36,6 +37,10 @@ function SignUp() {
         }
     }
 
+    const handle_signup = ()=>{
+        dispatch(google_signup());
+    }
+
     return (
         <>
             {/* <Container> */}
@@ -46,7 +51,7 @@ function SignUp() {
                         <h1>Hello User</h1>
                         <span>
                             <p>signup with social media</p>
-                            <a href="#"><i className="fa fa-twitter" aria-hidden="true"></i> signup with Google</a>
+                            <a onClick={handle_signup} style={{cursor:"pointer"}}>signup with Google</a>
                         </span>
                     </div>
                 </div>
@@ -65,7 +70,7 @@ function SignUp() {
                     <br /><br />
                     <button onClick={handleclick}>Signup</button>
                     <br />
-                    <p>have an account? <a href="#">login</a></p>
+                    <p>have an account? <NavLink to ='/login'>login</NavLink></p>
                 </div>
 
             </div>

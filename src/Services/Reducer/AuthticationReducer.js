@@ -15,6 +15,7 @@ export const Aunthntication_reducer = (state = initialState, action) => {
             return {
                 ...state,
                 signup: true,
+                login : false,
                 signup_msg: "Signup successfullly"
             }
 
@@ -27,7 +28,12 @@ export const Aunthntication_reducer = (state = initialState, action) => {
                 login_msg: "Login successfullly",
                 user: action.payload
             }
-
+        case "log_out":
+            return{
+                ...state,
+                login:false,
+                user: null
+            }
             
 
         default:

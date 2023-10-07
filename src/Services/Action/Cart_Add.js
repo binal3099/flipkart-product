@@ -12,3 +12,11 @@ export const Cart_total = (t) =>{
         payload: t
     }
 }
+
+export const delte = (id) =>{
+
+    return {
+        type :"DELETE",
+        payload: id
+    }
+}

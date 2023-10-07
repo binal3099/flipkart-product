@@ -7,7 +7,7 @@ function Total() {
 
     return (
         <>
-            <div className='col-4 Pricedetail'>
+            <div>
                 <span>
                     PRICE DETAILS
                 </span>

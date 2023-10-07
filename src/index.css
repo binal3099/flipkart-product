@@ -100,17 +100,26 @@ a.nav-link {
     color: #fff;
 }
 
+.card-show{
+    justify-content: space-between !important;
+}
+
 .card-1 {
-    background-image: url('img-1.webp');
+    background-image: url('electronic-3.jpg');
     width: 230px;
     height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 0px bottom;
+    background-position: left;
+}
+
+.card_show{
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .card-body {
-    padding: 50px 30px 30px 30px;
+    padding: 30px 30px 30px 30px;
     text-align: center;
 }
 
@@ -215,6 +224,10 @@ a.nav-link {
     font-weight: 400;
 }
 
+.card-text{
+    margin-bottom: 20px;
+}
+
 p.card-text {
     font-size: 14px;
     padding-top: 8px;
@@ -234,10 +247,19 @@ p.card-text {
 .add_button {
     margin-bottom: 8px;
 }
-
+.cart-img{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
+.cart-img img{
+    width: 100%;
+    height: 100%;
+}
 .Pricedetail {
-    border: 2px solid;
+    border: 2px solid #f1e8e8;
     margin-left: 16px;
+    height: 250px;
 }
 
 .Pricedetail span {

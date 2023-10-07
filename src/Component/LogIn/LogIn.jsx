@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { Button, Container, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { Loginasync } from '../../Services/Action/Authntication'
+import { Loginasync, google_lognin } from '../../Services/Action/Authntication'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 function LogIn() {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {login_msg} = useSelector(state => state.Aunthntication_reducer);
+    const { login_msg, login } = useSelector(state => state.Aunthntication_reducer);
 
     const [InputField, setInputFied] = useState({
         email: '',
@@ -23,16 +23,21 @@ function LogIn() {
         setInputFied({ ...InputField, [name]: value })
     }
 
-    const handleclick = ()=>{
-        if(InputField.email == '' && InputField.password ==  ''){
+    const handleclick = () => {
+        dispatch(Loginasync(InputField));
+        if (InputField.email == '' && InputField.password == '') {
             alert("Fill the form");
         }
-        else{
-            dispatch(Loginasync(InputField));
-            alert(`${login_msg}`)
-            navigate('/');
-
+        else {
+            if (login) {
+                alert(`${login_msg}`)
+                navigate('/');
+            }
         }
+    }
+
+    const handlegoogle_login = () => {
+        dispatch(google_lognin());
     }
 
     return (
@@ -45,7 +50,7 @@ function LogIn() {
                         <h1>Hello User</h1>
                         <span>
                             <p>login with social media</p>
-                            <a href="#"><i className="fa fa-twitter" aria-hidden="true"></i> Login with Google</a>
+                            <a onClick={handlegoogle_login} style={{ cursor: "pointer" }}>Login with Google</a>
                         </span>
                     </div>
                 </div>
@@ -53,11 +58,11 @@ function LogIn() {
 
                 <div className="right">
                     <h5>Login</h5>
-                   
+
                     <div className="inputs">
-                        <input type="text" placeholder="email" name="email" value={InputField.email} onChange={handleChange}/>
+                        <input type="text" placeholder="email" name="email" value={InputField.email} onChange={handleChange} />
                         <br />
-                        <input type="password" placeholder="password" name="password" value={InputField.password} onChange={handleChange}/>
+                        <input type="password" placeholder="password" name="password" value={InputField.password} onChange={handleChange} />
                     </div>
 
                     <br /><br />
@@ -70,7 +75,7 @@ function LogIn() {
                     <br />
                     <button onClick={handleclick}>Login</button>
                     <br />
-                    <p>Don't have an account? <NavLink to ='/signup'>Creat Your Account</NavLink></p>
+                    <p>Don't have an account? <NavLink to='/signup'>Creat Your Account</NavLink></p>
                 </div>
 
             </div>
